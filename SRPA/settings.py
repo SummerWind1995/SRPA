@@ -3,7 +3,7 @@
 # Author: David
 # Email: youchen.du@gmail.com
 # Created: 2017-09-07 09:05
-# Last modified: 2017-10-11 13:39
+# Last modified: 2017-10-14 13:56
 # Filename: settings.py
 # Description:
 """
@@ -30,9 +30,6 @@ PHASE = os.getenv('SRPA_SETTINGS', 'development')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v_&4b1seyjht1+vl6c08)&7is*srv_0lqg4t^%0f71o19r5%yu'
 
 
 ALLOWED_HOSTS = [
@@ -131,10 +128,11 @@ USE_L10N = True
 USE_TZ = True
 
 if PHASE == 'production':
-    from SRPA.production_settings import DATABASES
+    DEBUG = False
+    from SRPA.production_settings import DATABASES, SECRET_KEY
 else:
-    from SRPA.development_settings import DATABASES
     DEBUG = True
+    from SRPA.development_settings import DATABASES, SECRET_KEY
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

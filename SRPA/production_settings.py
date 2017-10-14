@@ -3,9 +3,14 @@
 # Author: David
 # Email: youchen.du@gmail.com
 # Created: 2017-10-01 15:16
-# Last modified: 2017-10-04 10:44
+# Last modified: 2017-10-14 13:56
 # Filename: production_settings.py
 # Description:
+from django.utils.crypto import get_random_string
+
+chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+SECRET_KEY = get_random_string(50, chars)
+
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 

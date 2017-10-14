@@ -1,0 +1,16 @@
+{% extends 'base/layout.html' %}
+{% load i18n %}
+{% block header_css %}
+{{block.super}}
+<style>
+p.indent{
+    text-indent: 2em;
+}
+</style>
+{% endblock %}
+{% block container %}
+<div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 srpa-background">
+    <h1>{% trans 'ERROR 404' %}</h1>
+    <h2>{% trans 'Page Not Found' %}</h2>
+</div>
+{% endblock %}
