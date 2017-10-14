@@ -5,10 +5,9 @@ USER root
 RUN git clone https://github.com/Time1ess/SRPA
 VOLUME ["/SRPA/static", "/SRPA/media"]
 
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod a+x /entrypoint.sh
+RUN chmod a+x /SRPA/web/entrypoint.sh
 
 EXPOSE 8000
 
 ENV SRPA_SETTINGS production
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/SRPA/web/entrypoint.sh"]
