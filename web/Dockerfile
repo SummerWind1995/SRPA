@@ -2,6 +2,9 @@ FROM python:3.5
 MAINTAINER youchen <youchen.du@gmail.com>
 USER root
 
+RUN apt-get update
+RUN apt-get install -y gettext
+
 RUN git clone https://github.com/Time1ess/SRPA
 VOLUME ["/SRPA/static", "/SRPA/media"]
 
