@@ -74,9 +74,12 @@ class ProjectDetail(ProjectBase, PermissionRequiredMixin, DetailView):
     raise_exception = True
 
     def get_context_data(self, **kwargs):
-        feed = FeedBack.objects.filter(
+        feeds = FeedBack.objects.filter(
             target_uid=self.object.uid)
-        kwargs['feeds'] = feed
+        kwargs['feeds'] = feeds
+        if self.object.socialinvitation_set.count():
+            social = self.object.socialinvitation_set.all()[0]
+            kwargs['social'] = social
         return super(ProjectDetail, self).get_context_data(**kwargs)
 
 
