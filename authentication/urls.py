@@ -3,7 +3,7 @@
 # Author: David
 # Email: youchen.du@gmail.com
 # Created: 2017-09-07 09:10
-# Last modified: 2017-10-14 10:28
+# Last modified: 2017-10-14 15:08
 # Filename: urls.py
 # Description:
 from django.conf.urls import url, include
@@ -22,6 +22,8 @@ info_update_patterns = [
 info_patterns = [
     url(r'^student/(?P<uid>.+)$', views.StudentInfoDetail.as_view(),
         name='student'),
+    url(r'^teacher/(?P<uid>.+)$', views.TeacherInfoDetail.as_view(),
+        name='teacher'),
     url('^update/', include(info_update_patterns, namespace='update')),
 ]
 

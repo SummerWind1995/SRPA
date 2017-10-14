@@ -3,12 +3,12 @@
 # Author: David
 # Email: youchen.du@gmail.com
 # Created: 2017-09-08 20:15
-# Last modified: 2017-10-14 10:18
+# Last modified: 2017-10-14 15:08
 # Filename: __init__.py
 # Description:
 from .auth import IndexView, LoginView, CaptchaRefresh
 from .auth import StudentRegisterView
-from .info_detail import StudentInfoDetail
+from .info_detail import StudentInfoDetail, TeacherInfoDetail
 from .info_update import StudentInfoUpdate
 from .admin import AdminIndex, AdminWorkshopAdd, AdminWorkshopUpdate
 from .admin import AdminWorkshopDetail, AdminTeacherAdd
@@ -19,7 +19,7 @@ from .admin import AdminSiteList
 
 __all__ = [
     'IndexView', 'LoginView', 'CaptchaRefresh',
-    'StudentRegisterView',
+    'StudentRegisterView', 'TeacherInfoDetail',
     'StudentInfoDetail', 'SocialInfoDetail',
     'StudentInfoUpdate', 'SocialInfoUpdate',
     'AdminIndex', 'AdminWorkshopAdd',

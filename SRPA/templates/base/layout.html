@@ -40,6 +40,8 @@
                                 <li>
                                     {% if request.user.user_info.identity == USER_IDENTITY_STUDENT %}
                                     <a href="{% url 'auth:info:student' request.user.user_info.uid %}">{% trans 'Profile' %}</a>
+                                    {% elif request.user.user_info.identity == USER_IDENTITY_TEACHER %}
+                                    <a href="{% url 'auth:info:teacher' request.user.user_info.uid %}">{% trans 'Profile' %}</a>
                                     {% endif %}
                                     <a href="{% url 'auth:password_change' %}">{% trans 'Update password' %}</a>
                                 </li>
