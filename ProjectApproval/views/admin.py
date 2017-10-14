@@ -69,6 +69,9 @@ class AdminProjectDetail(AdminProBase, PermissionRequiredMixin, DetailView):
         kwargs['user'] = user
         kwargs['feeds'] = feeds
         kwargs['form'] = form
+        if self.object.socialinvitation_set.count():
+            social = self.object.socialinvitation_set.all()[0]
+            kwargs['social'] = social
         return super(AdminProjectDetail, self).get_context_data(**kwargs)
 
 
